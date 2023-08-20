@@ -1,0 +1,45 @@
+<mat-toolbar class="container">
+  <!-- <span>{{ title }}</span> -->
+  <span>Campgrounds</span>
+  <div *ngIf="currentUser$ | async" class="Campground-btns">
+    <button>See all Campgrounds</button>
+    <button>Campground</button>
+  </div>
+
+  <span class="flex-spacer"></span>
+  <ng-container *ngIf="currentUser$ | async" class="nav-dropdown">
+    <button mat-button [matMenuTriggerFor]="menu">
+      Welcome User
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Edit profile</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </ng-container>
+  <form
+    *ngIf="(currentUser$ | async) === null"
+    #loginForm="ngForm"
+    (ngSubmit)="login()"
+    autocomplete="off"
+    class="login-form"
+  >
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        placeholder="username"
+        name="username"
+        [(ngModel)]="model.username"
+      />
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        placeholder="password"
+        name="password"
+        [(ngModel)]="model.password"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</mat-toolbar>

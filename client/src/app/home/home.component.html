@@ -1,0 +1,15 @@
+<div class="container">
+  <div *ngIf="!registerMode">
+    <h4 class="mat-display-1">
+      Welcome to
+      <u>Campgrounds</u>
+    </h4>
+    <p>Check out some of the camping sites in South Africa.</p>
+    <div>
+      <button (click)="toggleRegister()">don't have an account? Register</button>
+    </div>
+  </div>
+  <div *ngIf="registerMode">
+    <app-login-form [usersFromHomeComponent]="users" (cancelRegister)="cancelRegisterMode($event)"></app-login-form>
+  </div>
+</div>

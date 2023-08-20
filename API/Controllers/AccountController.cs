@@ -43,7 +43,7 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user)
             }; ;
         }
-
+         
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {

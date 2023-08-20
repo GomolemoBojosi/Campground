@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="primary">Register</mat-toolbar>
+
+    <mat-card>
+      <form #registerForm="ngForm" (ngSubmit)="login()">
+        <mat-form-field class="form-field">
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input
+            type="text"
+            matInput
+            placeholder="username"
+            name="username"
+            [(ngModel)]="model.username"
+          />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input
+            type="text"
+            matInput
+            placeholder="password"
+            name="password"
+            [(ngModel)]="model.password"
+          />
+        </mat-form-field>
+        <div>
+          
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
