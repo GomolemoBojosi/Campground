@@ -3,7 +3,7 @@
     <mat-toolbar class="login-toolbar" color="primary">Register</mat-toolbar>
 
     <mat-card>
-      <form #registerForm="ngForm" (ngSubmit)="login()">
+      <form #registerForm="ngForm" (ngSubmit)="register()">
         <mat-form-field class="form-field">
           <mat-icon matPrefix>person_outline</mat-icon>
           <input
@@ -15,9 +15,19 @@
           />
         </mat-form-field>
         <mat-form-field class="form-field">
-          <mat-icon matPrefix>lock_outline</mat-icon>
+          <mat-icon matPrefix>email_outline</mat-icon>
           <input
             type="text"
+            matInput
+            placeholder="email"
+            name="email"
+            [(ngModel)]="model.email"
+          />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input
+            type="password"
             matInput
             placeholder="password"
             name="password"
@@ -25,9 +35,9 @@
           />
         </mat-form-field>
         <div>
-          
+         
         <button mat-raised-button color="primary" type="submit">Submit</button>
-        <button (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
         </div>
       </form>
     </mat-card>

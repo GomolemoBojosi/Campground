@@ -21,5 +21,11 @@ namespace API.Controllers
             var result = await _context.Campgrounds.ToListAsync();
             return Ok(result);
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Campground>> GetCampgroundById(int id)
+        {
+            var result = await _context.Campgrounds.FindAsync(id);
+            return Ok(result);
+        }
     }
 }

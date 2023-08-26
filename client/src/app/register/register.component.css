@@ -30,3 +30,7 @@ mat-card-content {
 .login-toolbar {
   text-align: center;
 }
+
+button {
+  margin-right: 5px;
+}
