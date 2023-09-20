@@ -1,13 +1,17 @@
-<mat-toolbar class="container">
+<mat-toolbar class="container" color="primary">
   <!-- <span>{{ title }}</span> -->
-  <a routerLink="/">Campgrounds</a>
-  <div *ngIf="currentUser$ | async" class="Campground-btns">
-    <li>
-      <a routerLink="/campgrounds" routerLinkActive="active">See all Campgrounds</a>
-    </li>
-    <li>
-      <a routerLink="#" routerLinkActive="active">Add Campground</a>
-    </li>
+  <a routerLink="/" class="campground-heading">Campgrounds</a>
+  <div class="Campground-btns">
+    <ng-container *ngIf="currentUser$ | async" >
+      <ul class="campground-links">
+        <li>
+          <a routerLink="/campgrounds" routerLinkActive="active">See all Campgrounds</a>
+        </li>
+        <li>
+          <a routerLink="#" routerLinkActive="active">Add Campground</a>
+        </li>
+      </ul>
+    </ng-container>
   </div>
 
   <span class="flex-spacer"></span>
@@ -44,6 +48,6 @@
         [(ngModel)]="model.password"
       />
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
+    <button mat-stroked-button type="submit">Submit</button>
   </form>
 </mat-toolbar>

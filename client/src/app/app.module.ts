@@ -14,6 +14,8 @@ import { CampgroundCardComponent } from './campgrounds/campground-card/campgroun
 import { CampgroundsComponent } from './campgrounds/campground-list/campground-list.component';
 import { CampgroundDetailsComponent } from './campgrounds/campground-details/campground-details.component';
 import { RegisterComponent } from './register/register.component';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,9 @@ import { RegisterComponent } from './register/register.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

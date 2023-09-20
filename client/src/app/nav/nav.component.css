@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding:0 150px;
+  padding: 0 150px;
 }
 
 .SignIn-btn {
@@ -36,4 +36,24 @@ button {
 
 .Campground-btns {
   padding: 5px 0 5px 0;
+}
+
+.campground-links {
+  list-style: none;
+}
+
+.campground-links li {
+  display: inline;
+  margin: 10px;
+}
+
+.campground-links a {
+  text-decoration: none;
+  color: #dfdfdf;
+}
+
+.campground-heading {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #dfdfdf;
 }
