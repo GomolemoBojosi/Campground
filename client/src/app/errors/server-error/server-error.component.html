@@ -1,0 +1,8 @@
+<h4>Internal Server Error</h4>
+<mat-card>
+  <ng-container *ngIf="error">
+    <h5 class="error">Error: {{ error.message }}</h5>
+    <p>Stack trace</p>
+    <code class="error-detail">{{ error.details }}</code>
+  </ng-container>
+</mat-card>
