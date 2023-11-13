@@ -8,6 +8,8 @@ import { AuthGuard } from './_guards/auth.guard';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { AddCampgroundComponent } from './campgrounds/add-campground/add-campground.component';
+import { EditCampgroundComponent } from './campgrounds/edit-campground/edit-campground.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
     children: [
       { path: 'campgrounds', component: CampgroundsComponent, canActivate: [AuthGuard] },
       { path: 'campgrounds/:id', component: CampgroundDetailsComponent },
+      { path: 'add-campground', component: AddCampgroundComponent },
+      { path: 'campground/:id/edit', component: EditCampgroundComponent}
     ]
   },
   { path: 'errors', component: TestErrorsComponent },

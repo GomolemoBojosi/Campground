@@ -41,7 +41,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("API.Models.Campground", b =>
@@ -66,7 +66,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Campgrounds");
+                    b.ToTable("Campgrounds", (string)null);
                 });
 #pragma warning restore 612, 618
         }

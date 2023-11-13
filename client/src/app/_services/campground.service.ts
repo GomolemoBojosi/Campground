@@ -19,4 +19,8 @@ export class CampgroundService {
   getCampgroundById(id: number) {
     return this.http.get<Campground>(this.baseUrl + 'campground/' + id);
   }
+
+  createCampground(model: any) {
+    return this.http.post<Campground>(this.baseUrl + 'Campground/new', model);
+  }
 }

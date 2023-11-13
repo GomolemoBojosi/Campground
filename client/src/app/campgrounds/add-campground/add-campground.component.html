@@ -1,0 +1,16 @@
+<mat-toolbar>Add Campground</mat-toolbar>
+<form #addCampgroundForm="ngForm" (ngSubmit)="addCampground()">
+  <mat-form-field class="form-field">
+    <label>Title</label>
+    <input type="text" matInput name="title" [(ngModel)]="model.title"/>
+  </mat-form-field>
+  <mat-form-field>
+    <label>Location</label>
+    <input type="text" matInput name="location" [(ngModel)]="model.location"/>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary">Add Campground</button>
+    
+    <button routerLink="/" mat-raised-button color="warn">back</button>
+  </div>
+</form>

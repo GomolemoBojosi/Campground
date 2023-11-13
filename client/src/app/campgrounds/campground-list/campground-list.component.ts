@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Campground } from 'src/app/_models/campground';
 import { CampgroundService } from 'src/app/_services/campground.service';
 
 @Component({
@@ -7,16 +8,17 @@ import { CampgroundService } from 'src/app/_services/campground.service';
   styleUrls: ['./campground-list.component.css'],
 })
 export class CampgroundsComponent implements OnInit {
-  campgrounds: any = [];
-  constructor(private campgroundService: CampgroundService) {}
+  campgrounds: Campground[];
+  constructor(private campgroundService: CampgroundService) { }
 
   ngOnInit(): void {
     this.getCampgrounds();
-  }
+  };
 
   getCampgrounds() {
     this.campgroundService.getCampgrounds().subscribe((response) => {
       this.campgrounds = response;
+      console.log(response);
     });
-  }
+  };
 }
