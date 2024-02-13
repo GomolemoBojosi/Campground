@@ -10,5 +10,6 @@ namespace Campground.Data
         }
 
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Camp> Campgrounds { get; set; }
     }
 }
