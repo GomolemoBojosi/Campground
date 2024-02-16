@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Campground", "Campground\Campground.csproj", "{3D30EE3F-0105-4A41-A686-C583CF5E4637}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "Campground\API.csproj", "{3D30EE3F-0105-4A41-A686-C583CF5E4637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
