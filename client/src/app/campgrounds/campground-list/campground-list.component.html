@@ -1,0 +1,7 @@
+<h1>Campgrounds</h1>
+
+<ul>
+  <li *ngFor="let campground of campgrounds">
+    <a routerLink="/campgrounds/{{ campground.id }}">{{ campground.title }}</a>
+  </li>
+</ul>

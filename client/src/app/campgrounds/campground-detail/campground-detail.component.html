@@ -1,0 +1,12 @@
+<div *ngIf="campground">
+  <h1>{{ campground.title }}</h1>
+  <p>{{ campground.location }}</p>
+  <div>
+    <p>
+      <a routerLink="/edit-campground/{{campground.id}}">Edit</a>
+    </p>
+  </div>
+  <div>
+    <a routerLink="/campgrounds">All campgrounds</a>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div *ngIf="campground">
+  <form #editForm="ngForm" (ngSubmit)="save()" autocomplete="off">
+    <h2>Edit Campground</h2>
+    <hr />
+    <div>
+      <label>Title</label>
+      <input type="text" name="title" [(ngModel)]="campground.title" placeholder="title"/>
+      <label>Location</label>
+      <input type="text" name="location" [(ngModel)]="campground.location" placeholder="location"/>
+    </div>
+    <div>
+      <button type="submit">Update</button>
+    </div>
+  </form>
+  
+  <a routerLink="/campgrounds">back to campground</a>
+  
+</div>
