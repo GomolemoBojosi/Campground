@@ -5,3 +5,7 @@
 .logins{
     margin-right: 10px;
 }
+
+.dropdown-toggle, .dropdown-item {
+    cursor: pointer;
+}

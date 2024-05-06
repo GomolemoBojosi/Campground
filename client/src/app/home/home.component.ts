@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,14 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  registerMode = false;
+  users: any;
 
-  constructor(private route: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  viewCampgrounds() {
-    this.route.navigateByUrl('/campgrounds');
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode= event;
   }
 
 }
