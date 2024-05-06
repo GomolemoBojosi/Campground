@@ -2,31 +2,38 @@
   <div class="container">
     <a routerLink="/" class="navbar-brand">Campgrounds</a>
 
-      <ul class="navbar-nav mr-auto">
-        <ng-container *ngIf="!accountService.currentUser$ | async">
-          <li class="nav-item active">
-            <a routerLink="/" class="nav-link">Home</a>
-          </li>
-        </ng-container>
-        <ng-container *ngIf="accountService.currentUser$ | async">
-          <li class="nav-item active">
-            <a routerLink="/campgrounds" class="nav-link">Campgrounds</a>
-          </li>
-        </ng-container>
-        <ng-container *ngIf="accountService.currentUser$ | async">
-          <li class="nav-item active">
-            <a routerLink="/add-campground" class="nav-link">Add Campground</a>
-         </li>
-        </ng-container>
-        <ng-container *ngIf="!accountService.currentUser$ | async">
-          <li class="nav-item active">
-            <a routerLink="#" class="nav-link">About</a>
-          </li>
-        </ng-container>
-      </ul>
+    <!-- *ngIf="!accountService.currentUser$ | async" -->
+    <ul class="navbar-nav mr-auto">
+      <ng-container *ngIf="!accountService.currentUser$ | async">
+        <li class="nav-item active" >
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="accountService.currentUser$ | async">
+        <li class="nav-item active" >
+          <a routerLink="/campgrounds" class="nav-link">Campgrounds</a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="accountService.currentUser$ | async">
+        <li class="nav-item active" >
+          <a routerLink="/add-campground" class="nav-link">Add Campground</a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="!accountService.currentUser$ | async">
+        <li class="nav-item active" >
+          <a routerLink="#" class="nav-link">About</a>
+        </li>
+      </ng-container>
+    </ul>
 
-    <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
-      <button type="button" class="btn btn-primary dropdown-toggle" dropdownToggle>Welcome user</button>
+    <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        dropdownToggle
+      >
+        Welcome, {{user.username | titlecase}}
+      </button>
       <div class="dropdown-menu mt-2" *dropdownMenu>
         <a class="dropdown-item">Profile</a>
         <div class="dropdown-divider"></div>
@@ -34,20 +41,30 @@
       </div>
     </div>
 
-    <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0 d-flex" (ngSubmit)="login()" autocomplete="off">
-      <input 
-      name="username"
-      [(ngModel)]="model.username"
-       type="text" 
-       class="form-control mr-sm-2 mr-md-3" 
-       placeholder="username">
+    <form
+      *ngIf="(accountService.currentUser$ | async) === null"
+      #loginForm="ngForm"
+      class="form-inline mt-2 mt-md-0 d-flex"
+      (ngSubmit)="login()"
+      autocomplete="off"
+    >
+      <input
+        name="username"
+        [(ngModel)]="model.username"
+        type="text"
+        class="form-control mr-sm-2 mr-md-3"
+        placeholder="username"
+      />
       <input
         name="password"
-        [(ngModel)]="model.password" 
-        type="password" 
-        class="form-control mr-sm-2 mr-md-3" 
-        placeholder="password">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        [(ngModel)]="model.password"
+        type="password"
+        class="form-control mr-sm-2 mr-md-3"
+        placeholder="password"
+      />
+      <button class="btn btn-success my-2 my-sm-0" type="submit">
+        Login
+      </button>
     </form>
   </div>
 </nav>

@@ -12,9 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { CampgroundDetailComponent } from './campgrounds/campground-detail/campground-detail.component';
 import { AddCampgroundComponent } from './campgrounds/add-campground/add-campground.component';
 import { EditCampgroundComponent } from './campgrounds/edit-campground/edit-campground.component';
-import { ToastrModule } from 'ngx-toastr';
-import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { RegisterComponent } from './register/register.component';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,10 +32,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    }),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
