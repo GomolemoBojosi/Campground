@@ -1,4 +1,5 @@
 using API.Interfaces;
+using API.Middleware;
 using API.Services;
 using Campground.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -41,7 +42,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionMiddleware>();
+
+//app.UseHttpsRedirection();
 
 app.UseCors(policy => policy.AllowAnyHeader()
             .AllowAnyMethod()

@@ -22,9 +22,6 @@ export class NavComponent implements OnInit {
   login() {
     this.accountService.login(this.model).subscribe(result => {
       this.router.navigateByUrl('/campgrounds');
-    }, error => {
-      console.log(error);
-      this.toastr.error(error.error);
     });
   };
 
